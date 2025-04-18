@@ -75,7 +75,7 @@ export default function Home() {
         className="text-center font-bold mb-8"
         style={{
           fontFamily: 'Barriecito',
-          fontSize: '6rem'
+          fontSize: '3rem'
         }}
       >
         Adote um Amiguinho
