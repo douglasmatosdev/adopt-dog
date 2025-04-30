@@ -20,7 +20,7 @@ export default function App() {
 		});
 
 		setTimeout(() => {
-			const message = `Quero adotar este amiguinho : ${dog.name}.\n\nATENÇÃO\nEstou ciente de que:\n- Todos os filhotes não são castrados;\n- Não possuem vacinas;\n- O sexo escolhido é ${dog.gender === 'male' ? 'MACHO' : 'FÊMEA'}.\n\n Informe seu nome e endereço que iremos entregar.`;
+			const message = `Quero adotar este amiguinho : ${dog.name}.\n\nATENÇÃO\nEstou ciente de que:\n- Todos os filhotes não são castrados;\n- Não possuem vacinas;\n- O sexo escolhido é ${dog.gender === 'male' ? 'MACHO' : 'FÊMEA'}.\n\n Informe seu nome e endereço (se possível a localização) e horário, que iremos entregar.`;
 			const url = `https://wa.me/5521994642132?text=${encodeURIComponent(
 				message
 			)}`;
