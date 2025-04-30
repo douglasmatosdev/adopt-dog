@@ -5,48 +5,9 @@ import Image from "next/image";
 import Carousel from 'react-bootstrap/Carousel';
 import confetti from "canvas-confetti";
 import dynamic from "next/dynamic";
+import { dogs } from "@/utils/data";
 
 const BackToTopButton = dynamic(() => import('../components/BackToTopButton'), { ssr: false });
-
-const dogs: Dog[] = [
-	{
-		id: 1,
-		name: "Amiguinho 1 (Macho)",
-		mainImage: "/amiguinho-1/foto-5-macho-1.jpeg",
-		moreImages: ["/amiguinho-1/foto-1-macho-1.jpeg", "/amiguinho-1/foto-2-macho-1.jpeg", "/amiguinho-1/foto-3-macho-1.jpeg", "/amiguinho-1/foto-4-macho-1.jpeg", "/amiguinho-1/foto-5-macho-1.jpeg", "/amiguinho-1/foto-6-macho-1.jpeg"],
-	},
-	{
-		id: 2,
-		name: "Amiguinho 2 (Fêmea)",
-		mainImage: "/amiguinho-2/foto-1-femea-2.jpeg",
-		moreImages: ["/amiguinho-2/foto-1-femea-2.jpeg", "/amiguinho-2/foto-2-femea-2.jpeg", "/amiguinho-2/foto-3-femea-2.jpeg"],
-	},
-	{
-		id: 3,
-		name: "Amiguinho 3 (Fêmea)",
-		mainImage: "/amiguinho-3/foto-3-femea-3.jpeg",
-		moreImages: ["/amiguinho-3/foto-1-femea-3.jpeg", "/amiguinho-3/foto-2-femea-3.jpeg", "/amiguinho-3/foto-3-femea-3.jpeg"],
-	},
-	{
-		id: 4,
-		name: "Amiguinho 4 (Macho)",
-		mainImage: "/amiguinho-4/foto-2-macho-4.jpeg",
-		moreImages: ["/amiguinho-4/foto-2-macho-4.jpeg", "/amiguinho-4/foto-1-macho-4.jpeg"],
-	},
-	{
-		id: 5,
-		name: "Amiguinho 5 (Macho)",
-		mainImage: "/amiguinho-5/foto-2-macho-5.jpeg",
-		moreImages: ["/amiguinho-5/foto-1-macho-5.jpeg", "/amiguinho-5/foto-2-macho-5.jpeg", "/amiguinho-5/foto-3-macho-5.jpeg", "/amiguinho-5/foto-4-macho-5.jpeg"],
-	},
-	{
-		id: 6,
-		name: "Amiguinho 6 (Macho)",
-		mainImage: "/amiguinho-6/foto-4-macho-6.jpeg",
-		moreImages: ["/amiguinho-6/foto-1-macho-6.jpeg", "/amiguinho-6/foto-2-macho-6.jpeg", "/amiguinho-6/foto-3-macho-6.jpeg", "/amiguinho-6/foto-4-macho-6.jpeg"],
-	},
-];
-
 
 export default function App() {
 	const [selectedDog, setSelectedDog] = useState<Dog>({} as Dog);
@@ -59,7 +20,7 @@ export default function App() {
 		});
 
 		setTimeout(() => {
-			const message = `Quero adotar este amiguinho : ${dog.name}`;
+			const message = `Quero adotar este amiguinho : ${dog.name}.\n\nATENÇÃO\nEstou ciente de que:\n- Todos os filhotes não são castrados;\n- Não possuem vacinas;\n- O sexo escolhido é ${dog.gender === 'male' ? 'MACHO' : 'FÊMEA'}.\n\n Informe seu nome e endereço que iremos entregar.`;
 			const url = `https://wa.me/5521994642132?text=${encodeURIComponent(
 				message
 			)}`;
@@ -86,12 +47,22 @@ export default function App() {
 				>
 					Adote um Amiguinho
 				</h1>
+				<div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8" role="alert">
+					<p className="font-bold">Atenção</p>
+					<p>Todos os filhotes não são castrados e não possuem vacinas. Verifique o sexo do filhote escolhido antes de prosseguir.</p>
+					<p>Nasceram dia 12/02/2025</p>
+				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{dogs.map((dog) => (
 						<div
 							key={dog.id}
-							className="border rounded-lg shadow-lg p-4 flex flex-col items-center bg-white"
+							className="relative border rounded-lg shadow-lg p-4 flex flex-col items-center bg-white"
 						>
+							{dog.status === 'pending' && (
+								<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
+									<span className="text-white font-bold text-lg">Em processo de adoção❤️</span>
+								</div>
+							)}
 							<Image
 								src={dog.mainImage}
 								alt={dog.name}
@@ -102,14 +73,18 @@ export default function App() {
 							<h2 className="text-lg font-semibold mt-4">{dog.name}</h2>
 							<div className="flex gap-4 mt-4">
 								<button
-									className="bg-blue-500 text-white px-4 py-2 rounded"
-									onClick={() => setSelectedDog(dog)}
+									className={`px-4 py-2 rounded ${dog.status === 'pending' ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-blue-500 text-white'
+										}`}
+									onClick={() => dog.status !== 'pending' && setSelectedDog(dog)}
+									disabled={dog.status === 'pending'}
 								>
 									Ver mais fotos
 								</button>
 								<button
-									className="bg-green-500 text-white px-4 py-2 rounded flex items-center gap-2"
-									onClick={() => handleAdopt(dog)}
+									className={`px-4 py-2 rounded flex items-center gap-2 ${dog.status === 'pending' ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-green-500 text-white'
+										}`}
+									onClick={() => dog.status !== 'pending' && handleAdopt(dog)}
+									disabled={dog.status === 'pending'}
 								>
 									Adotar
 									<svg
