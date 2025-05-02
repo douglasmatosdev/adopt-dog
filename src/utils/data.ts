@@ -12,7 +12,7 @@ export const dogs: Dog[] = [
 		name: "Amiguinho 2 (Fêmea)",
 		mainImage: "/amiguinho-2/foto-1-femea-2.jpeg",
 		moreImages: ["/amiguinho-2/foto-1-femea-2.jpeg", "/amiguinho-2/foto-2-femea-2.jpeg", "/amiguinho-2/foto-3-femea-2.jpeg"],
-		status: 'pending',
+		status: 'available',
 		gender: 'female'
 	},
 	{
