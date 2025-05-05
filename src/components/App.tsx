@@ -60,7 +60,12 @@ export default function App() {
 						>
 							{dog.status === 'pending' && (
 								<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
-									<span className="text-white font-bold text-lg">Em processo de adoção❤️</span>
+									<span className="text-white font-bold text-4xl">Em processo de adoção❤️</span>
+								</div>
+							)}
+							{dog.status === 'adopted' && (
+								<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
+									<span className="text-white font-bold text-4xl">❤️Adotado❤️</span>
 								</div>
 							)}
 							<Image
