@@ -3,7 +3,7 @@ export const dogs: Dog[] = [
 		id: 1,
 		name: "Amiguinho 1 (Macho)",
 		mainImage: "/amiguinho-1/foto-5-macho-1.jpeg",
-		moreImages: ["/amiguinho-1/foto-1-macho-1.jpeg", "/amiguinho-1/foto-2-macho-1.jpeg", "/amiguinho-1/foto-3-macho-1.jpeg", "/amiguinho-1/foto-4-macho-1.jpeg", "/amiguinho-1/foto-5-macho-1.jpeg", "/amiguinho-1/foto-6-macho-1.jpeg"],
+		moreImages: ["/amiguinho-1/foto-1-macho-1.jpeg", "/amiguinho-1/foto-2-macho-1.jpeg", "/amiguinho-1/foto-3-macho-1.jpeg", "/amiguinho-1/foto-4-macho-1.jpeg", "/amiguinho-1/foto-5-macho-1.jpeg", "/amiguinho-1/foto-6-macho-1.jpeg", "/amiguinho-1/foto-7-macho-1.jpeg"],
 		status: 'available',
 		gender: 'male'
 	},
@@ -11,7 +11,7 @@ export const dogs: Dog[] = [
 		id: 2,
 		name: "Amiguinho 2 (Fêmea)",
 		mainImage: "/amiguinho-2/foto-1-femea-2.jpeg",
-		moreImages: ["/amiguinho-2/foto-1-femea-2.jpeg", "/amiguinho-2/foto-2-femea-2.jpeg", "/amiguinho-2/foto-3-femea-2.jpeg"],
+		moreImages: ["/amiguinho-2/foto-1-femea-2.jpeg", "/amiguinho-2/foto-2-femea-2.jpeg", "/amiguinho-2/foto-3-femea-2.jpeg", "/amiguinho-2/foto-4-femea-2.jpeg"],
 		status: 'available',
 		gender: 'female'
 	},
@@ -19,7 +19,7 @@ export const dogs: Dog[] = [
 		id: 3,
 		name: "Amiguinho 3 (Fêmea)",
 		mainImage: "/amiguinho-3/foto-3-femea-3.jpeg",
-		moreImages: ["/amiguinho-3/foto-1-femea-3.jpeg", "/amiguinho-3/foto-2-femea-3.jpeg", "/amiguinho-3/foto-3-femea-3.jpeg"],
+		moreImages: ["/amiguinho-3/foto-1-femea-3.jpeg", "/amiguinho-3/foto-2-femea-3.jpeg", "/amiguinho-3/foto-3-femea-3.jpeg", "/amiguinho-3/foto-4-femea-3.jpeg"],
 		status: 'available',
 		gender: 'female'
 	},
@@ -43,7 +43,7 @@ export const dogs: Dog[] = [
 		id: 6,
 		name: "Amiguinho 6 (Macho)",
 		mainImage: "/amiguinho-6/foto-4-macho-6.jpeg",
-		moreImages: ["/amiguinho-6/foto-1-macho-6.jpeg", "/amiguinho-6/foto-2-macho-6.jpeg", "/amiguinho-6/foto-3-macho-6.jpeg", "/amiguinho-6/foto-4-macho-6.jpeg"],
+		moreImages: ["/amiguinho-6/foto-1-macho-6.jpeg", "/amiguinho-6/foto-2-macho-6.jpeg", "/amiguinho-6/foto-3-macho-6.jpeg", "/amiguinho-6/foto-4-macho-6.jpeg", "/amiguinho-6/foto-5-macho-6.jpeg"],
 		status: 'available',
 		gender: 'male'
 	},

@@ -107,15 +107,15 @@ export default function App() {
 				</div>
 
 				{selectedDog?.id && (
-					<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-						<div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+					<div className="fixed z-90 inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+						<div className="bg-indigo-200 p-8 rounded-lg shadow-lg max-w-md w-full">
 							<h2 className="text-xl font-bold mb-4">{selectedDog.name}</h2>
 							<div>
 								<Carousel style={{
-									maxHeight: '50vh'
+									height: '50vh'
 								}}>
 									{selectedDog?.moreImages?.map((image, index) => (
-										<Carousel.Item key={image + index}>
+										<Carousel.Item key={image + index} style={{height: '50vh'}} >
 											<Image
 												src={image}
 												alt={`${selectedDog.name} ${index + 1}`}
@@ -123,7 +123,7 @@ export default function App() {
 												width={100}
 												height={100}
 												style={{
-													maxHeight: '50vh'
+													height: '50vh'
 												}}
 												className="rounded-lg cursor-pointer"
 												onClick={() => window.open(image, "_blank")}
