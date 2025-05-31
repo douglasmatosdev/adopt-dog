@@ -15,7 +15,7 @@ const BackToTopButton = (): JSX.Element => {
         <>
             {showBaxToTopButton ? (
                 <button
-                    style={{ borderRadius: '100%' }}
+                    style={{ borderRadius: '100%', zIndex: 1000 }}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="fixed bottom-8 right-4 bg-green-500 text-white p-[16px] shadow-lg hover:bg-green-600 transition-opacity z-10 rounded-full"
                 >
