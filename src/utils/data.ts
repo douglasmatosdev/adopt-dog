@@ -4,7 +4,7 @@ export const dogs: Dog[] = [
 		name: "Amiguinho 1 (Macho)",
 		mainImage: "/amiguinho-1/foto-5-macho-1.jpeg",
 		moreImages: ["/amiguinho-1/foto-1-macho-1.jpeg", "/amiguinho-1/foto-2-macho-1.jpeg", "/amiguinho-1/foto-3-macho-1.jpeg", "/amiguinho-1/foto-4-macho-1.jpeg", "/amiguinho-1/foto-5-macho-1.jpeg", "/amiguinho-1/foto-6-macho-1.jpeg", "/amiguinho-1/foto-7-macho-1.jpeg"],
-		status: 'available',
+		status: 'adopted',
 		gender: 'male'
 	},
 	{
@@ -44,7 +44,7 @@ export const dogs: Dog[] = [
 		name: "Amiguinho 6 (Macho)",
 		mainImage: "/amiguinho-6/foto-4-macho-6.jpeg",
 		moreImages: ["/amiguinho-6/foto-1-macho-6.jpeg", "/amiguinho-6/foto-2-macho-6.jpeg", "/amiguinho-6/foto-3-macho-6.jpeg", "/amiguinho-6/foto-4-macho-6.jpeg", "/amiguinho-6/foto-5-macho-6.jpeg"],
-		status: 'available',
+		status: 'adopted',
 		gender: 'male'
 	},
 ];
